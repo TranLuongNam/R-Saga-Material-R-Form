@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import PropTypes from 'prop-types';
-import styles from "./styles";
+import styles from './styles';
 import React, { Component } from 'react';
 import TaskForm from '../../components/TaskForm/TaskForm';
 import TaskList from '../../components/TaskList/TaskList';

@@ -30,7 +30,7 @@ module.exports = {
     'import/extensions': 0,
     'react/prefer-stateless-function': 0,
     'import/prefer-default-export': 0,
-    'react/state-in-constructor': 0,
+    'react/state-in-constructor': 2,
     "lines-between-class-members":0,
     'prettier/prettier': [
       'error',

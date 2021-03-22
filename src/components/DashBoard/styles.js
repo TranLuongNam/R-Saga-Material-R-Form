@@ -2,6 +2,7 @@ const styles = (theme) => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'row',
+    height: '100vh',
   },
   wrapperChildren: {
     width: '100%',
@@ -12,7 +13,7 @@ const styles = (theme) => ({
     }),
   },
   shiftLext: {
-    marginLeft: -240,
+    marginLeft: -220,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.leavingScreen,

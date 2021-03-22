@@ -9,9 +9,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import styles from './styles';
 
 const menuId = 'primary-search-account-menu';
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -26,10 +28,12 @@ class Header extends Component {
     });
   };
   handleMenuClose = () => {
+    const { history } = this.props;
     console.log('handleMenuClose');
     this.setState({
       anchorEl: null,
     });
+    history.push('/sign-in');
   };
 
   renderMenu = () => {
@@ -45,8 +49,7 @@ class Header extends Component {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>LogOut</MenuItem>
       </Menu>
     );
   };
@@ -103,4 +106,4 @@ Header.propTypes = {
   name: PropTypes.string,
   onToggleSlideBar: PropTypes.func,
 };
-export default withStyles(styles)(Header);
+export default withStyles(styles)(withRouter(Header));

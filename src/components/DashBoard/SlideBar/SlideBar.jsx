@@ -6,6 +6,7 @@ import { ADMIN_ROUTER } from '../../../constants';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 class Sidebar extends Component {
   toggleDrawer = (value) => {
@@ -23,9 +24,17 @@ class Sidebar extends Component {
         <List component="div">
           {ADMIN_ROUTER.map((item) => {
             return (
-              <ListItem className={classes.menuItem} key={item.path} button>
-                {item.name}
-              </ListItem>
+              <NavLink
+                key={item.path}
+                to={item.path}
+                exact={item.exact}
+                className={classes.menuLink}
+                activeClassName={classes.menuLinkActive}
+              >
+                <ListItem className={classes.menuItem} button>
+                  {item.name}
+                </ListItem>
+              </NavLink>
             );
           })}
         </List>

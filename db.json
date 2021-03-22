@@ -1,27 +1,21 @@
 {
   "tasks": [
     {
-      "title": "Learn JS",
-      "description": "JavaScript",
-      "status": 0,
-      "id": 5
-    },
-    {
-      "title": "FrontEnd",
+      "title": "FrontEnd Dev",
       "description": "ReactJs",
-      "status": 2,
+      "status": 1,
       "id": 6
     },
     {
-      "title": "FrontEnd",
+      "title": "FrontEnd Dev",
       "description": "AngularJS",
       "status": 0,
       "id": 7
     },
     {
-      "title": "FrontEnd",
+      "title": "FrontEnd Dev",
       "description": "VueJs",
-      "status": 1,
+      "status": 0,
       "id": 8
     },
     {
@@ -31,14 +25,8 @@
       "id": 9
     },
     {
-      "title": "Saga-Material-UI",
-      "description": "Saga-Material-UI",
-      "status": 0,
-      "id": 10
-    },
-    {
-      "title": "Code is Bug",
-      "description": "Fix Bug",
+      "title": "Project Reactjs",
+      "description": "Fix ",
       "status": 1,
       "id": 11
     }

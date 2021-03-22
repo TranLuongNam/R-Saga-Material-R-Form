@@ -28,13 +28,14 @@ export const STATUS_CODE = {
 export const ADMIN_ROUTER = [
   {
     path: '/admin',
-    exact: true,
     name: 'Trang Quản Trị',
     component: AdminHomePage,
   },
   {
-    path: '/admin/task-board',
-    name: 'Quản Lý Công Việc',
+    path: '/',
+    exact: true,
+    name: ' Quản Lý Công Việc',
+
     component: TashBoard,
   },
 ];

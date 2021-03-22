@@ -11,6 +11,13 @@ import { Link } from 'react-router-dom';
 import styles from './styles';
 
 class LoginPage extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  onHandleSignIn = () => {
+    const { history } = this.props;
+    history.push('/');
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -18,7 +25,7 @@ class LoginPage extends Component {
         <div className={classes.login}>
           <Card>
             <CardContent>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div className="text-xs-center pb-xs">
                   <Typography variant="caption">
                     Đăng Nhập Để Tiếp Tục!
@@ -43,6 +50,7 @@ class LoginPage extends Component {
                   color="primary"
                   type="submit"
                   fullWidth
+                  onClick={this.onHandleSignIn}
                 >
                   Đăng Nhập
                 </Button>

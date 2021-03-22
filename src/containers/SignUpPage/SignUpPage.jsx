@@ -9,10 +9,17 @@ import {
   withStyles,
 } from '@material-ui/core';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import styles from './styles';
 
 class SignUpPage extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  onHandleSignUp = () => {
+    const { history } = this.props;
+    history.push('/sign-in');
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -20,7 +27,7 @@ class SignUpPage extends Component {
         <div className={classes.signUp}>
           <Card>
             <CardContent>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div className="text-xs-center pb-xs">
                   <Typography variant="caption">Đăng Ký Tài Khoản !</Typography>
                 </div>
@@ -55,13 +62,14 @@ class SignUpPage extends Component {
                   color="primary"
                   type="submit"
                   fullWidth
+                  onClick={this.onHandleSignUp}
                 >
                   Đăng Ký
                 </Button>
                 <div className="pt-1 text-md-center">
                   <span>
                     Bạn Đã Có Tài Khoản?
-                    <Link to="/sign-up">
+                    <Link to="/sign-in">
                       <Button>
                         <i>Đăng Nhập !</i>
                       </Button>
@@ -77,4 +85,4 @@ class SignUpPage extends Component {
   }
 }
 
-export default withStyles(styles)(SignUpPage);
+export default withStyles(styles)(withRouter(SignUpPage));

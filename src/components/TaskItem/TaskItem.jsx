@@ -6,6 +6,7 @@ import {
   Grid,
   withStyles,
 } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
@@ -14,7 +15,7 @@ import styles from './styles';
 
 class TaskItem extends PureComponent {
   render() {
-    const { classes, task, status } = this.props;
+    const { classes, task, status, onClickEdit, onClickDelete } = this.props;
     return (
       <Card key={task.id} className={classes.card}>
         <CardContent>
@@ -34,6 +35,7 @@ class TaskItem extends PureComponent {
             aria-label="Edit"
             className={classes.fab}
             size="small"
+            onClick={onClickEdit}
           >
             <EditIcon />
           </Fab>
@@ -42,6 +44,7 @@ class TaskItem extends PureComponent {
             className={classes.fab}
             arial-label="Delete"
             size="small"
+            onClick={onClickDelete}
           >
             <DeleteForeverIcon />
           </Fab>
@@ -50,5 +53,9 @@ class TaskItem extends PureComponent {
     );
   }
 }
+TaskItem.propTypes = {
+  classes: PropTypes.object,
+  onClickEdit: PropTypes.func,
+};
 
 export default withStyles(styles)(TaskItem);
